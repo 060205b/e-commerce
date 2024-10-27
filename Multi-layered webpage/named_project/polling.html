@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Polling</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+        }
+
+        main {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 2em;
+        }
+
+        .poll-container {
+            background-color: #fff;
+            padding: 2em;
+            margin: 1em;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .poll-container:hover {
+            transform: scale(1.05);
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 1em;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 2em auto;
+            background-color: #fff;
+            padding: 2em;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        input, select {
+            width: 100%;
+            margin-bottom: 1em;
+            padding: 0.5em;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            padding: 0.5em 1em;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Image Polling</h1>
+</header>
+
+<main>
+    <div class="poll-container" onclick="vote('Dog')">
+        <img src="https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2022/03/15085347/Miniature-Poodles-head-portrait-outdoors-1.jpg" alt="Dog"
+        width="350"
+        height="350">
+        <p>Vote for Dogs</p>
+    </div>
+
+    <div class="poll-container" onclick="vote('Cat')">
+        <img src="https://placekitten.com/301/200" alt="Cat"
+        width="350"
+        height="350">
+        <p>Vote for Cats</p>
+    </div>
+</main>
+
+<!-- ... (previous HTML code) ... -->
+
+
+<!-- ... (previous HTML code) ... -->
+
+<form id="demographicForm" style="display: none;">
+    <h2>Demographic Information</h2>
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age" required>
+
+    <label for="gender">Gender:</label>
+    <select id="gender" name="gender" required>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+    </select>
+
+    <label for="likesDogs">Do you like dogs?</label>
+    <select id="likesDogs" name="likesDogs" required>
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+    </select>
+
+    <label for="likesCats">Do you like cats?</label>
+    <select id="likesCats" name="likesCats" required>
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+    </select>
+
+    <label for="preference">Which picture do you prefer?</label>
+    <select id="preference" name="preference" required>
+        <option value="dog">Dog</option>
+        <option value="cat">Cat</option>
+    </select>
+
+    <label for="reason">Reason for your preference:</label>
+    <textarea id="reason" name="reason" required></textarea>
+
+    <label for="frequency">How often do you interact with pets?</label>
+    <select id="frequency" name="frequency" required>
+        <option value="daily">Daily</option>
+        <option value="weekly">Weekly</option>
+        <option value="occasionally">Occasionally</option>
+        <option value="never">Never</option>
+    </select>
+
+    <label for="favoritePet">Do you have a favorite pet?</label>
+    <input type="text" id="favoritePet" name="favoritePet" required>
+
+    <label for="petOwnership">Do you currently own a pet?</label>
+    <select id="petOwnership" name="petOwnership" required>
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+    </select>
+
+    <label for="otherPets">If yes, what other pets do you own?</label>
+    <input type="text" id="otherPets" name="otherPets" required>
+
+    <button onclick="submitDemographicForm()">Submit</button>
+</form>
+
+<!-- ... (remaining HTML code) ... -->
+
+
+<!-- ... (remaining HTML code) ... -->
+
+<script>
+    let votes = {
+        'Dog': 0,
+        'Cat': 0
+    };
+
+    function vote(animal) {
+        document.getElementById('demographicForm').style.display = 'block';
+        document.getElementById('age').value = '';
+        document.getElementById('gender').value = 'male';  // Default gender to male
+
+        document.getElementById('demographicForm').onsubmit = function (event) {
+            event.preventDefault();
+
+            const age = document.getElementById('age').value;
+            const gender = document.getElementById('gender').value;
+
+            // Store the vote along with demographic information
+            votes[animal]++;
+
+            // Display the collected information (you can update this logic)
+            
+            alert(
+    'Vote for ' + animal + ' recorded!\n\nDemographic Information:\nAge: ' + age + '\nGender: ' + gender
+);
+
+
+            document.getElementById('demographicForm').reset();
+            document.getElementById('demographicForm').style.display = 'none';
+        };
+    }
+</script>
+
+</body>
+</html> 

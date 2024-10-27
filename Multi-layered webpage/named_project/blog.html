@@ -1,0 +1,184 @@
+<html>
+    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    /* Add a gray background color with some padding */
+    body {
+      font-family: Arial;
+      padding: 20px;
+      background: #ffffff;
+    }
+    
+    /* Header/Blog Title */
+    .header {
+      padding: 30px;
+      font-size: 40px;
+      text-align: center;
+      background: rgb(162, 162, 162);
+    }
+    
+    /* Create two unequal columns that floats next to each other */
+    /* Left column */
+    .leftcolumn {   
+      float: left;
+      width: 75%;
+    }
+    
+    /* Right column */
+    .rightcolumn {
+      float: left;
+      width: 25%;
+      padding-left: 20px;
+    }
+    
+    /* Fake image */
+    .fakeimg {
+      background-color: rgb(162, 162, 162);
+      width: 100%;
+      padding: 20px;
+    }
+    
+    /* Add a card effect for articles */
+    .card {
+       background-color: rgb(162, 162, 162);
+       padding: 20px;
+       margin-top: 20px;
+    }
+    
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    
+    /* Footer */
+    .footer {
+      padding: 20px;
+      text-align: center;
+      background: rgb(162, 162, 162);
+      margin-top: 20px;
+    }
+    
+    /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 800px) {
+      .leftcolumn, .rightcolumn {   
+        width: 100%;
+        padding: 0;
+      }
+    }
+    </style>
+    </head>
+    <body>
+    
+    <div class="header">
+      <h2>Traidic fusion</h2>
+    </div>
+    
+    <div class="row">
+      <div class="leftcolumn">
+        <div class="card">
+          <h2>CSS</h2>
+          <h5>Early Web Development (1990s):</h5>
+
+          <div>
+            <img src="https://cdn.mos.cms.futurecdn.net/Vp9WvV7YKdH4k8sKRePcE8-650-80.jpg.webp"
+            width="600px"
+            hight="300px"/>
+        </div>
+          <p>In the early days of the World Wide Web, websites were simple and primarily consisted of text. Styling was done directly within HTML using attributes like <font> and <color>.
+    As web development advanced, there was a growing need for a separate language to handle the presentation aspects, leading to the development of CSS.</color></font></p>
+          <h6>CSS Level 1 (1996):
+    </h6>
+    <p>The first official CSS specification, CSS Level 1, was introduced in December 1996 by the World Wide Web Consortium (W3C).
+    CSS Level 1 included basic styling properties for fonts, colors, and text alignment.</p>
+    <h6>CSS Level 2 (1998):</h6>
+    <p>CSS Level 2, published in May 1998, brought significant improvements and expanded capabilities. It introduced features like positioning, z-index, and the ability to apply styles to different media types (screen, print, etc.).
+    The separation of content and presentation became more pronounced with CSS Level 2..
+    </p>
+        </div>
+        <div class="card">
+          <h2>HTML</h2>
+          <h5>History to development</h5>
+          <div> 
+          <img src="https://blog-media.byjusfutureschool.com/bfs-blog/2021/09/17203233/What-is-HTML-Article-Page-948_500.png"
+          width="500px"
+          hight="350px"/>
+        </div>
+          <p>In 1980, physicist Tim Berners-Lee, a contractor at CERN, proposed and prototyped ENQUIRE, a system for CERN researchers to use and share documents. In 1989, Berners-Lee wrote a memo proposing an Internet-based hypertext system.[3] Berners-Lee specified HTML and wrote the browser and server software in late 1990. That year, Berners-Lee and CERN data systems engineer Robert Cailliau collaborated on a joint request for funding, but the project was not formally adopted by CERN. In his personal notes of 1990, Berners-Lee listed "some of the many areas in which hypertext is used"; an encyclopedia is the first entry.[4]
+    The first publicly available description of HTML was a document called "HTML Tags",[5] first mentioned on the Internet by Tim Berners-Lee in late 1991.[6][7] It describes 18 elements comprising the initial, relatively simple design of HTML. Except for the hyperlink tag, these were strongly influenced by SGMLguid, an in-house Standard Generalized Markup Language (SGML)-based documentation format at CERN. Eleven of these elements still exist in HTML 4.</p>
+          
+        </div>
+      </div>
+      <div class="rightcolumn">
+        <div class="card">
+          <h2>About us</h2>
+          <div></div>
+          <ul>
+        <li>Bhuvaneshwari</li>
+       <li>Arun prakash</li>
+    
+       <li>Nandha kumar</li>
+      <li>   Aarindra babu</li>
+       <li>Aravind</li>
+       <li>Manikandan</li>
+       <li>Shree Ram</li>
+       <li>Abhishek</li>
+       <li>Mithul</li>
+       <li>Prithvi raj</li>
+       <li>Jak inba</li>
+       <li>Madhesh</li></ul>
+        <!-- ... (previous code) ... -->
+
+<style>
+    /* ... (previous styles) ... */
+  
+    /* Style for images in the .fakeimg class */
+    .fakeimg img {
+      width: 100%; /* Make the image fill its container */
+      height: auto; /* Maintain aspect ratio */
+      display: block; /* Remove extra space under the image */
+      margin: 0 auto; /* Center the image */
+    }
+  </style>
+  
+  <!-- ... (remaining code) ... -->
+  
+  <div class="card">
+    <h3>Do you Know?</h3>
+    <div class="fakeimg">
+      <img src="images\doyouknow.jpg" alt="Image description" />
+    </div>
+    <br>
+    <div class="fakeimg">
+        <img src="https://files.realpython.com/media/HTML-And-CSS-For-Python-Developers_Watermarked.e2604f40ef5b.jpg"/>
+    <br>
+  </div>
+  
+  <!-- ... (remaining code) ... -->
+  
+        </div>
+        <div class="card">
+          <h3>Get this code</h3>
+          <a href="https://github.com/023b/base.git">github</a> 
+          <h3>Facts</h3>
+              <img src="images\factsss.jpg"
+              width="200px"
+              hight="300px"/>
+            <h4>HTML</h4>
+            <p>HTML (Hypertext Markup Language) is used to create the content of a page, such as text. HTML provides the basic structure of a website.</p>
+          <h4>CSS</h4>
+             <p>CSS (Cascade Styling Sheets) is used to control the style of a website, including layout, visual effects, and background color. CSS is used to control presentation, formatting, and layout.</p>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      
+   </body>
+    </html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Website</title>
+    <style>
+        body {
+            font-family: Monotype corsiva, century;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            background-image: url("images\\rust.jpg");
+            background-size: cover; 
+            background-repeat: no-repeat; 
+            color: white; 
+        }
+        header {
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 1em;
+            text-align: center;
+        }
+        .product {
+            
+            border-radius: 3px;
+            margin: 10px;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.5); 
+            box-shadow: 0 4px 8px 0rgba(249, 15, 15, 0.3); 
+            transition: transform 0.3s
+           ;
+        }
+        .product:hover,
+.product:active,
+.product.touch-active {
+    transform: scale(1.05);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+        
+        .product img {
+            max-width:150;
+            height:500;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Gun labs</h1>
+    </header>
+
+    <div class="product"
+    width:200
+    hight:100>
+        <img src="images\\Leopard 1v.jpg" alt="Product 1"
+        width="250" 
+        height="250"/>
+        <h2>Leopard 1v</h2>
+        <p>Introducing the formidable Leopard 1V, a legendary piece of military history that is now available for sale! This iconic tank represents the pinnacle of German engineering, boasting a powerful 105mm gun, sleek design, and unmatched agility on the battlefield..</p>
+        <p>Price: $199999.99</p>
+
+        <button onclick="addToCart('Product 1', 199999.99)">Add to Cart</button>
+
+    </div>
+    
+    <div class="product"
+    width:200
+    hight:100>
+        <img src="images\\Anti-Tank Grenade No. 74.jpg" alt="Product 1"
+        width="250" 
+        height="250"/>
+        <h2>Anti-Tank Grenade No. 74</h2>
+        <p>Are you ready to take your collection to the next level? Introducing the Anti-Tank Grenade No. 74 – a powerful and iconic piece of military history. This vintage anti-tank grenade, originally designed for use during World War II, is a remarkable artifact that showcases the engineering prowess of its time.</p>
+        <p>Price: $27999.99</p>
+        <button onclick="addToCart('Product 1', 27999.99)">Add to Cart</button>
+
+    </div>
+
+    
+
+    <div class="product"
+    width:200
+    hight:100>
+        <img src="named_project\images\Mitsubishi F-1.jpg" alt="Product 1"
+        width="250" 
+        height="250"/>
+        <h2>Mitsubishi</h2>
+        <p>Introducing the Mitsubishi F-1: Unleash the thrill of precision engineering and cutting-edge design with the Mitsubishi F-1. This exceptional vehicle seamlessly combines performance, style, and innovation for an unparalleled driving experience..</p>
+        <p>Price: $37.2599</p>
+        <button onclick="addToCart('Product 1', 27999.99)">Add to Cart</button>
+
+    </div>
+
+    <div class="product"
+    width:200
+    hight:100>
+        <img src="named_project\images\C-RAM Shield.jpg" alt="Product 1"
+        width="250" 
+        height="250"/>
+        <h2>C-RAM Shield</h2>
+        <p>Introducing C-RAM Shield: Your Home's Ultimate Defense Against Unseen Threats! In an era where safety is paramount, meet C-RAM Shield, the cutting-edge defense system designed to safeguard your home like never before. This state-of-the-art technology brings military-grade protection right to your doorstep.</p>
+        <p>Price: $58.2599</p>
+        <button onclick="addToCart('Product 1', 27999.99)">Add to Cart</button>
+
+    </div>
+
+    <div id="cart">
+        <h2>Shopping Cart</h2>
+        <ul id="cart-items"></ul>
+        <p>Total: $<span id="total">0.00</span></p>
+    </div>
+
+</div>
+
+<script>
+    let cartItems = [];
+    let total = 0;
+
+    function addToCart(product, price) {
+        cartItems.push({ product, price });
+        total += price;
+
+        updateCart();
+    }
+
+    function updateCart() {
+        const cartItemsElement = document.getElementById('cart-items');
+        const totalElement = document.getElementById('total');
+
+        // Clear previous items
+        cartItemsElement.innerHTML = '';
+
+        // Add current items
+        cartItems.forEach(item => {
+            const listItem = document.createElement('li');
+            listItem.textContent = ${item.product} - $${item.price.toFixed(2)};
+            cartItemsElement.appendChild(listItem);
+        });
+
+        // Update total
+        totalElement.textContent = total.toFixed(2);
+    }
+</script>
+
+
+</body>
+</html>

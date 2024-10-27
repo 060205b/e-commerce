@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Registration</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        #projectForm {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            width: 70%;
+            max-width: 600px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        #projectForm:hover {
+            transform: scale(1.02);
+        }
+
+        h2 {
+            color: #333;
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin: 15px 0 8px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input {
+            width: calc(100% - 24px);
+            padding: 12px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: border-color 0.3s ease-in-out;
+        }
+
+        input:focus {
+            border-color: #4caf50;
+            outline: none;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <script>
+        function resetForm() {
+            document.getElementById("projectForm").reset();
+        }
+
+        function submitForm() {
+            var formData = {
+                name: document.getElementById("name").value,
+                number: document.getElementById("number").value,
+                email: document.getElementById("email").value,
+                height: document.getElementById("height").value,
+                weight: document.getElementById("weight").value,
+                bloodGroup: document.getElementById("bloodGroup").value,
+                age: document.getElementById("age").value,
+                gender: document.getElementById("gender").value,
+                qualification: document.getElementById("qualification").value
+            };
+
+            // Send the data to the server using a POST request
+            fetch('http://localhost:3000/saveFormData', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+                // Redirect to the project selection page
+                window.location.href = "project_selection.html";
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
+</head>
+<body>
+    <form id="projectForm">
+        <h2>Project Registration</h2>
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="number">Number:</label>
+        <input type="text" id="number" name="number" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="height">Height:</label>
+        <input type="text" id="height" name="height" required>
+
+        <label for="weight">Weight:</label>
+        <input type="text" id="weight" name="weight" required>
+
+        <label for="bloodGroup">Blood Group:</label>
+        <input type="text" id="bloodGroup" name="bloodGroup" required>
+
+        <label for="age">Age:</label>
+        <input type="text" id="age" name="age" required>
+
+        <label for="gender">Gender:</label>
+        <input type="text" id="gender" name="gender" required>
+
+        <label for="qualification">Qualification:</label>
+        <input type="text" id="qualification" name="qualification" required>
+
+        <button type="button" onclick="resetForm()">Abort</button>
+        <button type="button" onclick="submitForm()">Submit</button>
+    </form>
+</body>
+</html>
